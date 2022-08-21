@@ -2,9 +2,11 @@ import './css/styles.css';
 import { markupOneCountry, markupSomeCountries } from './utils';
 import { fetchCountries } from './fetchCountries';
 import Notiflix from 'notiflix';
-Notiflix.Notify.init({ 
-  timeout: 3000, 
-  position: 'center-center' });
+Notiflix.Notify.init({
+  timeout: 3000,
+  position: 'left-top',
+  clickToClose: true,
+});
 const debounce = require('lodash.debounce');
 
 const DEBOUNCE_DELAY = 300;
