@@ -30,7 +30,6 @@ function fetchOn(e) {
       .then(data => {
         numberOfCountries = data.length;
         render(data);
-        console.log(data)
       })
       .catch(onFetchError);
   }
