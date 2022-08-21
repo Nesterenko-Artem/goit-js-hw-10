@@ -11,8 +11,11 @@ body {
   color: #212121;
   line-height: 1.5;
   background-color: rgb(171, 238, 165);
+ 
 }
-
+.wrapper{
+     text-align: center;
+}
 li {
   list-style: none;
 }
@@ -25,10 +28,18 @@ li {
   background-color: #a7e0a2;
   border: none;
   border-bottom: 1px solid #000;
+  margin-left: 50px;
 }
 #search-box:focus-visible {
   outline: none;
 }
+
+.country-list{
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .country-item {
   display: flex;
   justify-content: space-between;
@@ -48,7 +59,7 @@ li {
 .country-info {
   display: flex;
   align-items: flex-end;
-  justify-content: flex-start;
+  justify-content: center;
 }
 .country-info__name-thumb {
   display: flex;
@@ -67,6 +78,7 @@ li {
   flex-direction: column;
   margin: 0;
   justify-content: flex-end;
+  align-items: flex-start;
 }
 .country-info__name {
   margin-bottom: 10px;

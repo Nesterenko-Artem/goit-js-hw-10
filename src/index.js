@@ -2,7 +2,9 @@ import './css/styles.css';
 import { markupOneCountry, markupSomeCountries } from './utils';
 import { fetchCountries } from './fetchCountries';
 import Notiflix from 'notiflix';
-Notiflix.Notify.init({timeout: 5000,});
+Notiflix.Notify.init({ 
+  timeout: 3000, 
+  position: 'center-center' });
 const debounce = require('lodash.debounce');
 
 const DEBOUNCE_DELAY = 300;
@@ -32,36 +34,11 @@ function fetchOn(e) {
   }
 }
 
-//  function murckupForCountry({
-//    name: { official },
-//    capital,
-//    population,
-//    flags: { svg },
-//    languages,
-//  }) {
-//    const langList = Object.values(languages);
-//    return `  <div class='country-info__name-thumb'><img src="${svg}" alt="flag" width="30" height="30" class="country-info__img" /><span
-//   class="country-info__name"
-// >${official}</span></div>
-// <ul class="country-info__list">
-//   <li class="country-info__item">
-//     <p class="country-info__text">Capital: <span class="country-info__text-description">${capital}</span></p>
-//   </li>
-//   <li class="country-info__item">
-//     <p class="country-info__text">Population: <span class="country-info__text-description">${population}</span></p>
-//   </li>
-//   <li class="country-info__item">
-//     <p class="country-info__text">Languages: <span class="country-info__text-description">${langList}</span></p>
-//   </li>
-// </ul>`;
-//  };
-
 function render(data) {
   // if the backend returned more than 10 countries
   if (numberOfCountries > 10) {
     Notiflix.Notify.info(
-      `-${numberOfCountries}-Too many matches found. Please enter a more specific name.`,
-      { position: 'center-top' }
+      `Too many matches found. Please enter a more specific name.`
     );
   }
   // if the backend returned from 2 to 10 countries
@@ -78,12 +55,7 @@ function render(data) {
 }
 
 function onFetchError(error) {
-  Notiflix.Notify.failure(
-    `Oops,-${numberOfCountries}- there is no country with that name`,
-    {
-      position: 'center-top',
-    }
-  );
+  Notiflix.Notify.failure(`Oops, there is no country with that name`)
 }
 
 function clearSearch() {
